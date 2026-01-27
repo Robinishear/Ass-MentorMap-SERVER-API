@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Card {
+  id             String   @id @default(uuid())
+  cardName       String
+  cardHolderName String
+  cardNumber     String   @unique
+  expiryDate     String
+  cvv            String
+  cardType       CardType @default(DEBIT)
+  cardBrand      String
+  bankName       String?
+  status         Status   @default(ACTIVE)
+  isDefault      Boolean  @default(false)
+  balance        Float    @default(0.0)
+  currency       String   @default("USD")
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@map("cards")
+}
+
+enum CardType {
+  CREDIT
+  DEBIT
+  PREPAID
+}
+
+enum Status {
+  ACTIVE
+  BLOCKED
+  EXPIRED
+}
