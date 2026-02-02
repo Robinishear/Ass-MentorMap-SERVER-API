@@ -4,7 +4,7 @@ FoodHub is a robust backend for a meal-ordering ecosystem. It connects customers
 
 ---
 
-## 🚀 Key Features
+## 🚀 Key Features 
 
 - **Advanced Search & Filtering**: Discover meals by price, category, or dietary preference.
 - **Provider Dashboards**: Manage menus, availability, and fulfillment workflows.
