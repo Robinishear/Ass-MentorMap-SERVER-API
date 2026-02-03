@@ -55,6 +55,22 @@ const getProviderProfile = async (
   }
 };
 
+//? get all providers
+const getAllProviders = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  try {
+    const result = await ProviderService.getAllProviders();
+    res.json({
+      success: true,
+      data: result,
+    });
+  } catch (error: any) {
+    next(error);
+  }
+};
 
 //? get my provider profile (for logged in provider)
 const getMyProviderProfile = async (
