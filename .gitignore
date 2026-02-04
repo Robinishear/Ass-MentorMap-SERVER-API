@@ -70,3 +70,4 @@ router.patch("/cancel/:orderId", auth(), OrderController.cancelOrder);
 
 export const orderRoutes = router;
 .env
+.env*.local
